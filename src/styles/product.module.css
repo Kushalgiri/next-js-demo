@@ -1,0 +1,133 @@
+.projectSection {
+  margin: 125px 80px;
+  display: flex;
+}
+.projectSection .projectLeftSection .tabBtnGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.projectLeftSection .tabBtnGroup::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtnGroup .tabBtn {
+  font-size: 20px;
+  padding: 10px 25px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: #5e5e5e;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+.tabBtnGroup .tabBtn:focus {
+  /* background: transparent; */
+  outline: none;
+}
+
+.tabBtnGroup .active {
+  background-color: #badffb73;
+  color: #004881;
+  border-radius: 8px;
+}
+.projectSection .projectLeftSection {
+  width: 250px;
+}
+
+.projectSection .projectLeftSection h3 {
+  font-size: 32px;
+  color: #4b5acd;
+  padding: 30px 25px;
+}
+
+.projectSection .rojectRightSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 30px;
+}
+.projectSection .rojectRightSection .imageCardSection {
+  position: relative;
+}
+
+.imageCardSection .dropShadowSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  border-radius: 10px;
+}
+
+.imageCardSection .dropShadowSection:hover {
+  cursor: pointer;
+  /* background-color: red; */
+}
+.projectSection .rojectRightSection .imageCardSection img {
+  width: 425px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.dropShadowContent {
+  /* margin-top: 50%; */
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 30%, #000 110%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s all ease-out;
+}
+
+.dropShadowContent:hover {
+  background: none;
+  background-color: #4b5acd9c;
+}
+
+.dropShadowContent img {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.dropShadowContent .textContent {
+  margin-left: 20px;
+}
+
+.dropShadowContent .textContent p{
+  margin-bottom: 0px;
+}
+
+@media (max-width: 574px) {
+  .projectSection {
+    margin: 20px;
+    flex-direction: column;
+  }
+
+  .projectLeftSection {
+    width: unset !important;
+  }
+  .projectLeftSection h3 {
+    text-align: center;
+  }
+  .projectLeftSection .tabBtnGroup {
+    flex-direction: row !important;
+  }
+  .projectSection .rojectRightSection {
+    margin-top: 30px;
+    padding: 0px !important;
+  }
+  .rojectRightSection .imageCardSection .sampleImage {
+    width: 350px !important;
+    height: 360px !important;
+  }
+}
