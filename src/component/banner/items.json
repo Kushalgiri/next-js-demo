@@ -4,7 +4,7 @@
       {
         "id": 1,
         "title": "Photography",
-        "body": "Bootstrap Carousel Example",
+        "body": ["Bootstrap Carousel Example","Bootstrap Carousel Example","Bootstrap Carousel Example"],
         "imageUrl": "https://res.cloudinary.com/kizmelvin/image/upload/v1586799813/kizmelvin/persons_pigeon_nurkq2.jpg",
         "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
       },

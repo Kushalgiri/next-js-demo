@@ -3,17 +3,19 @@ import Features from "@/component/features/Features";
 import Footer from "@/component/footer/Footer";
 import NavBar from "@/component/NavBar";
 import Projects from "@/component/products/Products";
+import Video from "@/component/video/Video";
 
 
 const LandingPage = () => {
     return (
-        <>
-            <NavBar />
-            <Banner/>
-            <Features/>
-            <Projects/>
-            <Footer/>
-        </>
+      <>
+        <NavBar />
+        <Banner />
+        <Video src={"/videobg.mp4"} />
+        <Features />
+        <Projects />
+        <Footer />
+      </>
     );
 }
 
