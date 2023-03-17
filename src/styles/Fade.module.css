@@ -1,0 +1,30 @@
+.card  img{
+    width: 50%;
+    height: auto;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-bottom: 50px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cardLeft {
+  transform-origin: left;
+}
+
+.cardRight {
+  transform-origin: right;
+}
+
+.inView {
+  opacity: 1;
+  transform: translateX(0);
+}

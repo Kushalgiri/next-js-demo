@@ -1,0 +1,17 @@
+.container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeIn.fromLeft {
+  transform: translateX(-50px);
+}
+
+.fadeIn.fromRight {
+  transform: translateX(50px);
+}
