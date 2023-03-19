@@ -9,6 +9,8 @@ import logo from '../assets/images/logo.png'
 import {usePathname} from 'next/navigation';
 import { useEffect, useState } from "react";
 
+import NavBAr from "../component/navbar/navbar";
+
 
 function NavBar() {
 
@@ -44,7 +46,7 @@ const path = usePathname();
 
   return (
     <>
-      <Navbar
+      {/* <Navbar
         className="main-nav"
         style={{
           background: `rgba(255, 255, 255, ${backgroundTransparacy})`,
@@ -66,7 +68,9 @@ const path = usePathname();
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
+
+      <Navbar/>
     </>
   );
 }

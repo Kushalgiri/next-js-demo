@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 import ProjectOne from "../../assets/images/project-1.jpg";
 import ProjectTwo from "../../assets/images/project-2.jpg";
@@ -38,12 +36,7 @@ const projectTypes = [
 ];
 
 function Projects() {
-  useEffect(() => {
-    Aos.init({
-      once: true,
-      easing: "ease-out",
-    });
-  }, []);
+ 
   const [active, setActive] = useState(0);
   return (
     <div className={styles.projectSection} id="projects">
