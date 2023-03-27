@@ -5,6 +5,7 @@ import NavBar from "@/component/navbar/navbar";
 import Projects from "@/component/products/Products";
 import Video from "@/component/video/Video";
 import Fade from "@/component/fade/Fade"
+import Form from "@/component/MyForm";
 
 
 const LandingPage = () => {
@@ -16,6 +17,7 @@ const LandingPage = () => {
         <Fade />
         <Video src={"/videobg.mp4"} />
         <Features />
+        <Form/>
         <Projects />
         <Footer />
       </>
