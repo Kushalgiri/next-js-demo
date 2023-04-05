@@ -6,7 +6,8 @@ import service2 from "../../assets/images/service/service2.png";
 import service3 from "../../assets/images/service/service3.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import { animated, useSpring } from "react-spring";
 
 
 function Features() {
@@ -32,7 +33,29 @@ function Features() {
         imageUrl: require("../../assets/images/service/service1.png"),
       },
     ];
+
+
+ const [showCards, setShowCards] = useState(false);
+
+ useEffect(() => {
+   setShowCards(true);
+ }, []);
+
+ const cardSpring = useSpring({
+   from: { opacity: 0, transform: "translateY(50px)" },
+   to: {
+     opacity: showCards ? 1 : 0,
+     transform: showCards ? "translateY(0)" : "translateY(50px)",
+   },
+   delay: 500,
+ });
+
+
   return (
+
+
+   
+
     <div className="container">
       <div className={styles.featureWrapper}>
         <h2 data-aos="fade-up">Our Feature</h2>
@@ -41,10 +64,27 @@ function Features() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </span>
         <div className={styles.cardWrapper}>
-          {cardItem.map((item, index) => (
+          {/* {cardItem.map((item, index) => (
             
               <Card item={item} index={index}/>
-          ))}
+          ))} */}
+
+ <div className="banner">
+      <animated.div style={cardSpring} className="card">
+        <h2>Card 1</h2>
+        <p>This is the content for card 1.</p>
+      </animated.div>
+      <animated.div style={cardSpring} className="card">
+        <h2>Card 2</h2>
+        <p>This is the content for card 2.</p>
+      </animated.div>
+      <animated.div style={cardSpring} className="card">
+        <h2>Card 3</h2>
+        <p>This is the content for card 3.</p>
+      </animated.div>
+    </div>
+
+
         </div>
       </div>
     </div>

@@ -26,6 +26,7 @@
     "react-dom": "18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-intersection-observer": "^9.4.3",
-    "react-multi-select-component": "^4.3.4"
+    "react-multi-select-component": "^4.3.4",
+    "react-spring": "^9.7.1"
   }
 }
