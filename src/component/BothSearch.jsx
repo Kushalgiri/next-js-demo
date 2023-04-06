@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 const options = ["Option 1", "Option 2", "Option 3"];
 const locations = [
@@ -57,6 +58,30 @@ export default function Search() {
     };
   }, []);
 
+ useEffect(() => {
+   const fetchLocations = async () => {
+     try {
+       const response = await axios.get(
+         "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions",
+         {
+           headers: {
+             "x-rapidapi-key":
+               "f797a9232cmsh67d494d89551d93p1ff453jsn77502ed0a8ac",
+             "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+           },
+         }
+       );
+      //  console.log("REsponse",response)
+      //  setLocations(response.data.data.map((location) => location.name));
+     } catch (error) {
+       console.error(error);
+     }
+   };
+   fetchLocations();
+ }, []);
+
+
+
   return (
     <form className="search-container" onSubmit={handleSubmit}>
       <div className="search-box" ref={optionRef}>
@@ -65,7 +90,10 @@ export default function Search() {
           placeholder="Search for options..."
           value={selectedOption ? selectedOption : optionQuery}
           onClick={() => setShowOptionDropdown(true)}
-          onChange={(e) => setOptionQuery(e.target.value)}
+          onChange={(e) => {
+            setSelectedOption("");
+            setOptionQuery(e.target.value);
+          }}
         />
         {showOptionDropdown && (
           <ul className="options-dropdown">
@@ -87,7 +115,10 @@ export default function Search() {
           placeholder="Search for cities and locations in the UK..."
           value={selectedLocation ? selectedLocation : locationQuery}
           onClick={() => setShowLocationDropdown(true)}
-          onChange={(e) => setLocationQuery(e.target.value)}
+          onChange={(e) => {
+            setSelectedLocation("");
+            setLocationQuery(e.target.value);
+          }}
         />
         {showLocationDropdown && (
           <ul className="locations-dropdown">
@@ -113,49 +144,17 @@ export default function Search() {
 
 
 
-
-// geo location api http://www.geonames.org/ 
-
-// import { useState } from "react";
-
-// function LocationSearch() {
-//   const [locations, setLocations] = useState([]);
-//   const [query, setQuery] = useState("");
-
-//   const handleSearch = async (e) => {
-//     e.preventDefault();
-//     const endpointUrl = "http://api.geonames.org/searchJSON?";
-//     const params = {
-//       q: query,
-//       country: "GB",
-//       featureClass: "P",
-//       maxRows: 10,
-//       username: "your-geonames-username",
-//     };
-//     const requestUrl = `${endpointUrl}${new URLSearchParams(params)}`;
-//     const response = await fetch(requestUrl);
-//     const data = await response.json();
-//     setLocations(data.geonames);
-//   };
-
-//   return (
-//     <form onSubmit={handleSearch}>
-//       <label htmlFor="location">Location:</label>
-//       <input
-//         type="text"
-//         id="location"
-//         placeholder="Search for a location"
-//         value={query}
-//         onChange={(e) => setQuery(e.target.value)}
-//       />
-//       <button type="submit">Search</button>
-//       {locations.length > 0 && (
-//         <ul>
-//           {locations.map((location) => (
-//             <li key={location.geonameId}>{location.name}</li>
-//           ))}
-//         </ul>
-//       )}
-//     </form>
-//   );
-// }
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+//   fetch('/api/your-endpoint', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ selectedOption, selectedLocation }),
+//   })
+//   .then(response => {
+//     // handle success or failure response from the server
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
+// };
