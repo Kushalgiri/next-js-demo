@@ -6,6 +6,21 @@ body {
   font-family: "Nunito";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+.section{
+  margin: 100px;
+}
+
 .content {
   max-width: 960px;
   margin: 0 auto;
@@ -94,12 +109,50 @@ footer {
 }
 
 
+.wrapper{
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+
+.overlay{
+ 
+  transition: width 0.5s ease-out;
+
+  background-color: red;
+  position: absolute;
+  height: 100%;
+}
+
+.left{
+  background-color: lightblue;
+  width: 45%;
+}
+
+.right{
+  background-color: wheat;
+  width: 55%;
+}
+
+.left, .right{
+  padding: 100px;
+
+}
 
 
 
 
 
 
+.fp-section {
+  background-color: #fff;
+  color: #000;
+  font-size: 3rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 

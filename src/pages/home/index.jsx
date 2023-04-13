@@ -9,6 +9,10 @@ import Form from "@/component/MyForm";
 import SearchField from "@/component/Search";
 import LocationSearchField from "@/component/Location";
 import Search from "@/component/BothSearch";
+import TwoOverlay from "@/component/TwoOverlay";
+import HtrForm from "@/component/HtrForm";
+import ScrollSection from "@/component/ScrollSection";
+import ScrollToTopButton from "@/component/ScrollTop";
 
 
 const LandingPage = () => {
@@ -16,13 +20,20 @@ const LandingPage = () => {
       <>
         {/* <NavBar /> */}
         <NavBar />
+        <TwoOverlay />
+        {/* <ScrollToTopButton/> */}
+
+        <HtrForm/>
         {/* <Banner /> */}
         {/* <Fade /> */}
         {/* <Video src={"/videobg.mp4"} /> */}
-        <SearchField/>
-        <LocationSearchField/>
+        <SearchField />
+        <LocationSearchField />
         <Features />
-        <Search/>
+
+        {/* <ScrollSection/> */}
+        <Search />
+
         {/* <Form/> */}
         <Projects />
         <Footer />

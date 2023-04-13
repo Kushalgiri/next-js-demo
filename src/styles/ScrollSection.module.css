@@ -1,0 +1,32 @@
+.scrollSection {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inactive {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.scrollSection h1,
+.scrollSection p {
+  margin: 0;
+  padding: 0;
+}
+
+.scrollSection h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.scrollSection p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
