@@ -20,26 +20,26 @@ function NavBar() {
   const [padding, setPadding] = useState(30);
   const [boxShadow, setBoxShadow] = useState(0);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
 
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
+  // const handleScroll = () => {
+  //   setClientWindowHeight(window.scrollY);
+  // };
 
-  useEffect(() => {
-    let backgroundTransparacyVar = clientWindowHeight / 600;
+  // useEffect(() => {
+  //   let backgroundTransparacyVar = clientWindowHeight / 600;
 
-    if (backgroundTransparacyVar < 1) {
-      let paddingVar = 30 - backgroundTransparacyVar * 20;
-      let boxShadowVar = backgroundTransparacyVar * 0.1;
-      setBackgroundTransparacy(backgroundTransparacyVar);
-      setPadding(paddingVar);
-      setBoxShadow(boxShadowVar);
-    }
-  }, [clientWindowHeight]);
+  //   if (backgroundTransparacyVar < 1) {
+  //     let paddingVar = 30 - backgroundTransparacyVar * 20;
+  //     let boxShadowVar = backgroundTransparacyVar * 0.1;
+  //     setBackgroundTransparacy(backgroundTransparacyVar);
+  //     setPadding(paddingVar);
+  //     setBoxShadow(boxShadowVar);
+  //   }
+  // }, [clientWindowHeight]);
 
 
 const path = usePathname();

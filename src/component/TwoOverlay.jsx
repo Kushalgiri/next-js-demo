@@ -6,7 +6,7 @@ const [overlayWidth, setOverlayWidth] = useState("45%");
 
 useEffect(() => {
   function handleScroll() {
-    const scrollTop = window.scrollY;
+    // const scrollTop = window.scrollY;
     const maxScroll =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
@@ -23,10 +23,10 @@ useEffect(() => {
 
 
 
-  window.addEventListener("scroll", handleScroll);
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
+  // window.addEventListener("scroll", handleScroll);
+  // return () => {
+  //   window.removeEventListener("scroll", handleScroll);
+  // };
 }, []);
   return (
     <div className="section">
