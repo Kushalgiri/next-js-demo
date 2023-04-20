@@ -342,3 +342,62 @@ export default CheckForm;
 // }
 
 // export default CheckForm;
+
+
+
+
+// schema and validation yup 
+
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
+const MyFormSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  // add validation rules for other required fields here
+});
+
+const MyForm = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      // add initial values for other required fields here
+    },
+    validationSchema: MyFormSchema,
+    onSubmit: (values) => {
+      // handle form submission
+    },
+  });
+
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.name}
+      />
+      {formik.touched.name && formik.errors.name ? (
+        <div>{formik.errors.name}</div>
+      ) : null}
+      <label htmlFor="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.email}
+      />
+      {formik.touched.email && formik.errors.email ? (
+        <div>{formik.errors.email}</div>
+      ) : null}
+      // add other form fields here, but leave out the optional fields
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
