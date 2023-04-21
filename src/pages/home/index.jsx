@@ -10,7 +10,8 @@ import SearchField from "@/component/Search";
 import LocationSearchField from "@/component/Location";
 import Search from "@/component/BothSearch";
 import TwoOverlay from "@/component/TwoOverlay";
-import CheckForm from "@/component/CheckForm";
+// import CheckForm from "@/component/CheckForm";
+import MultiStepForm from "@/component/multistepForm";
 
 
 
@@ -32,7 +33,9 @@ const LandingPage = () => {
 
         {/* <ScrollSection/> */}
         {/* <Search /> */}
-<CheckForm/>
+{/* <CheckForm/> */}
+
+<MultiStepForm/>
         {/* <Form/> */}
         <Projects />
         <Footer />
